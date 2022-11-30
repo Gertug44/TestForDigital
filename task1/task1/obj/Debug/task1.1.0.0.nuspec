@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>task1</id>
+    <version>1.0.0</version>
+    <authors>task1</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\user\Documents\GitHub\TestForDigital\task1\task1\bin\Debug\net5.0\task1.runtimeconfig.json" target="lib\net5.0\task1.runtimeconfig.json" />
+    <file src="C:\Users\user\Documents\GitHub\TestForDigital\task1\task1\bin\Debug\net5.0\task1.dll" target="lib\net5.0\task1.dll" />
+  </files>
+</package>
