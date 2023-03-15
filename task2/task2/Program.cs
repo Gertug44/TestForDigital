@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,21 +17,22 @@ namespace task2
             if (args.Length != 2)
                 throw new ArgumentException("Для выполения программы ожидается 2 аргумента");
             try{
-                using (FileStream fstream = new FileStream(args[0], FileMode.OpenOrCreate))
+                using (FileStream fstream = new FileStream(args[0], FileMode.Open))
                 {
                     byte[] buffer = new byte[fstream.Length];
                     await fstream.ReadAsync(buffer);
                     string textFromFile = Encoding.Default.GetString(buffer);
-                    var data = textFromFile.Split("\r\n");
-                    r = float.Parse(data[1]);
+                    var data = textFromFile.Split("\r");
                     var centeinStr = data[0].Split(" ");
                     center[0] = float.Parse(centeinStr[0]);
                     center[1] = float.Parse(centeinStr[1]);
+                    textFromFile = data[1];
+                    r = float.Parse(textFromFile);
                 }
             }
             catch
             {
-                throw new ArgumentException("Проблемы 2 файла");
+                throw new ArgumentException("Проблемы c 1 файлом");
             }
             try
             {
